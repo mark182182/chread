@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Readability Enhancer",
+  "version": "1.0",
+  "description": "Improves readability of the selected page",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
